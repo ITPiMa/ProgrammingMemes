@@ -14,7 +14,7 @@ client.once('ready', () => {
 client.on('message', message => {
 	if (message.content === '!givemeameme') {
         
-		message.channel.send('Pong.');
+		message.channel.send('Screw you.');
 	}
 });
 // login to Discord with your app's token
