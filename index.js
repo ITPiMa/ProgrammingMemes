@@ -4,8 +4,6 @@ const Discord = require('discord.js');
 // create a new Discord client
 const client = new Discord.Client();
 
-var snoowrap = require('snoowrap');
-
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
