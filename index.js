@@ -1,6 +1,13 @@
 // require the discord.js module
 const Discord = require('discord.js');
 var request = require('request');
+var randomNumber = require('random-number');
+var options = {
+  min:  0
+, max:  100
+, integer: true
+};
+
 
 
 // create a new Discord client
@@ -24,6 +31,15 @@ client.on('message', message => {
         request(options, function (error, response, body) {
           message.channel.send(response.body); // Print the error if one occurred
         });
+	}
+    if (message.content === '!failornot') {
+        if (!message.mentions.users.size) {
+            return message.reply('Tag a user!');
+        }
+        else {
+            const taggedUser = message.mentions.users.first();
+            message.channel.send("${taggedUser} will have "+randomNumber(options)+"% on the test HTML.");  
+        }
 	}
 });
 // login to Discord with your app's token

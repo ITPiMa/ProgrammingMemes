@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ITPiMa/ProgrammingMemes#readme",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "random-number": "0.0.9",
     "request": "^2.81.0"
   }
 }
