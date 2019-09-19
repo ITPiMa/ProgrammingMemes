@@ -19,7 +19,12 @@ client.once('ready', () => {
     
 });
 client.on('message', message => {
-	if (message.content === '!dadjoke') {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+    
+	else if (command === 'dadjoke') {
        const options = {
             url: 'https://icanhazdadjoke.com/',
             method: 'GET',
@@ -32,7 +37,7 @@ client.on('message', message => {
           message.channel.send(response.body); // Print the error if one occurred
         });
 	}
-    if (message.content === '!failornot') {
+    else if (command === 'failornot') {
         if (!message.mentions.users.size) {
             return message.reply('Tag a user!');
         }
