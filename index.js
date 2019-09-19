@@ -34,7 +34,7 @@ client.on('message', message => {
             }
         };
         request(options, function (error, response, body) {
-          message.channel.send(response.body); // Print the error if one occurred
+          message.channel.send(response.body);
         });
 	}
     else if (command === 'failornot') {
@@ -43,6 +43,7 @@ client.on('message', message => {
         }
         else {
             const taggedUser = message.mentions.users.first();
+            message.channel.send("${taggedUser}");
             message.channel.send("${taggedUser} will have "+randomNumber(options)+"% on the test HTML.");  
         }
 	}
