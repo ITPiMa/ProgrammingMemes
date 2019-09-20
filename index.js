@@ -19,7 +19,7 @@ client.once('ready', () => {
     
 });
 client.on('message', message => {
-	if (message.content === 'dadjoke') {
+	if (message.content === '!dadjoke') {
        const options = {
             url: 'https://icanhazdadjoke.com/',
             method: 'GET',
