@@ -2,6 +2,7 @@
 const Discord = require('discord.js');
 var request = require('request');
 var randomNumber = require('random-number');
+var randomPuppy = require('random-puppy');
 var options = {
   min:  0
 , max:  100
@@ -43,6 +44,11 @@ client.on('message', message => {
         const taggedUser = message.mentions.users.first();
         
         message.channel.send(taggedUser + ' will have '+ randomNumber(options) +'% on his test HTML.')
+    }
+    if(command === 'meme') {
+        randomPuppy('ProgrammerHumor').then(url => {
+            message.channel.send(url);
+        })
     }
     
 });
