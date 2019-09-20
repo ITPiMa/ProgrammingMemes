@@ -42,7 +42,7 @@ client.on('message', message => {
         }
         const taggedUser = message.mentions.users.first();
         
-        message.channel.send('${taggedUser} will have '+ randomNumber(options) +'% on his test HTML.')
+        message.channel.send(taggedUser + ' will have '+ randomNumber(options) +'% on his test HTML.')
     }
     
 });
