@@ -1,14 +1,6 @@
 // require the discord.js module
 const Discord = require('discord.js');
 var request = require('request');
-var randomNumber = require('random-number');
-var options = {
-  min:  0
-, max:  100
-, integer: true
-};
-
-
 
 // create a new Discord client
 const client = new Discord.Client();
