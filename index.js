@@ -40,7 +40,7 @@ client.on('message', message => {
         if (!message.mentions.users.size) {
             return message.reply('Tag a user dummy! Thats 0% for sure!');
         }
-        const taggedUser = message.mentions.user.first();
+        const taggedUser = message.mentions.users.first();
         
         message.channel.send('${taggedUser} will have '+ randomNumber(options) +'% on his test HTML.')
     }
