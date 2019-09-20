@@ -37,15 +37,6 @@ client.on('message', message => {
           message.channel.send(response.body);
         });
 	}
-    else if (command === 'failornot') {
-        if (!message.mentions.users.size) {
-            return message.reply('Tag a user!');
-        }
-        else {
-            const taggedUser = message.mentions.users.first();
-            message.channel.send("${taggedUser} will have "+randomNumber(options)+"% on the test HTML.");  
-        }
-	}
 });
 // login to Discord with your app's token
 client.login(process.env.BOT_TOKEN);
