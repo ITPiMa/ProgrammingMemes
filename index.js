@@ -47,7 +47,8 @@ client.on('message', message => {
     }
     if(command === 'meme') {
         randomPuppy('ProgrammerHumor').then(url => {
-            message.channel.send(url);
+            var embed =  new Discord.RichEmbed().setImage(url);
+            message.channel.send(embed);
         })
     }
     
