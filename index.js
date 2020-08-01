@@ -37,16 +37,13 @@ client.on('message', message => {
           message.channel.send(response.body);
         });
 	}
-    if( command === 'failornot') {
-        if (!message.mentions.users.size) {
-            return message.reply('Tag a user dummy! Thats 0% for sure!');
-        }
-        const taggedUser = message.mentions.users.first();
+    if( command === 'bestracer') {
+        const taggedUser = message.guild.members.random();
         
-        message.channel.send(taggedUser + ' will have '+ randomNumber(options) +'% on his test HTML.')
+        message.channel.send(taggedUser + ' is the best racer in the world!')
     }
     if(command === 'meme') {
-        randomPuppy('ProgrammerHumor').then(url => {
+        randomPuppy('carmemes').then(url => {
             var embed =  new Discord.RichEmbed().setImage(url);
             message.channel.send(embed);
         })
