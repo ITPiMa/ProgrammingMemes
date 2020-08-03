@@ -42,8 +42,14 @@ client.on('message', message => {
         
         message.channel.send(taggedUser + ' is the best racer in the world!')
     }
-    if(command === 'meme') {
+    if(command === 'carmeme') {
         randomPuppy('carmemes').then(url => {
+            var embed =  new Discord.RichEmbed().setImage(url);
+            message.channel.send(embed);
+        })
+    }
+    if( command === 'meme') {
+        randomPuppy('Asphalt9').then(url => {
             var embed =  new Discord.RichEmbed().setImage(url);
             message.channel.send(embed);
         })
